@@ -1,0 +1,213 @@
+{
+  "idProject": "SEPSIS-evolucion-3er-dia",
+  "version": "0.0",
+  "releasedate": "2021-06-25",
+  "input": [   
+    {      
+      "name": "SOFATOT1",                       
+      "label": "SOFATOT1",                      
+      "description": "Valor SOFA al 1er día",                
+      "type": "numerical",                       
+      "group": "sepsis_score",                      
+      "model-importance": 0.454003, 
+            
+      "range": [0, 24],
+      "format": "int"
+    },
+    
+    {        
+      "name": "Quick1",                       
+      "label": "Quick1",                      
+      "description": "Índice quick día 1",                
+      "type": "numerical",
+      "unit": "%",                                              
+      "group": "sepsis_score",                      
+      "model-importance": 0.057907, 
+      
+      "range": [0, null],
+      "format": "float"
+    },
+
+    {        
+      "name": "pH1",                       
+      "label": "pH1",                      
+      "description": "pH día 1",                
+      "type": "numerical",
+      "unit": "",                   
+      "group": "Analíticas ingreso - niveles plasmáticos",                      
+      "model-importance": 0.051556, 
+      
+      "range": [0, 14],     
+      "format": "float"       
+    },
+
+    {        
+      "name": "TRRC1D",                       
+      "label": "TRRC1D",                      
+      "description": "Terapia remplazo renal día 1",                
+      "type": "boolean",                       
+      "group": "maniobra",                      
+      "model-importance": 0.044945
+    },
+
+    {        
+      "name": "H2B",                       
+      "label": "H2B",                      
+      "description": "Concentración de histona H2B",                
+      "type": "numerical",                       
+      "unit": "ng/mL",                       
+      "group": "Analíticas KIT - histonas",                      
+      "model-importance": 0.035477, 
+      
+      "range": [0, null],
+      "format": "float"
+    },
+    
+    {        
+      "name": "TRIGLICER",                       
+      "label": "TRIGLICERIDOS",                      
+      "description": "Niveles de trigliceridos",                
+      "type": "numerical",
+      "unit": "mg/dl",                    
+      "group": "Analíticas ingreso - niveles plasmáticos",                      
+      "model-importance": 0.025219, 
+      
+      "range": [0, null],
+      "format": "float"
+    },
+
+    {        
+      "name": "CRISTALOIDES",                       
+      "label": "CRISTALOIDES",                      
+      "description": "Niveles de cristaloides aplicados en la terapia de fluidos",                
+      "type": "numerical",                
+      "group": "medication",                      
+      "model-importance": 0.024996, 
+      
+      "range": [0, null],
+      "format": "float"
+    },
+
+    {        
+      "name": "H4",                       
+      "label":"H4",                      
+      "description": "Concentración de histona H4",                
+      "type": "numerical",                       
+      "unit": "ng/mL",                       
+      "group": "Analíticas KIT - histonas",                      
+      "model-importance": 0.024427, 
+      
+      "range": [0, null],
+      "format": "float"
+    },
+
+    {        
+      "name": "LDH1",                       
+      "label":"LDH1",                      
+      "description": "Niveles de lactato deshidrogenasa día 1",                
+      "type": "numerical",
+      "unit": "U/L",                        
+      "group": "laboratory_feature",                      
+      "model-importance": 0.023604, 
+      
+      "range": [0, null],
+      "format": "float"
+    },
+
+    {        
+      "name": "FALCAL",                       
+      "label":"Fosfatasa Alcalina",                      
+      "description": "Niveles de fosfatasa alcalina",                
+      "type": "numerical",                  
+      "unit": "mU/mL",     
+      "group": "laboratory_feature",                      
+      "model-importance": 0.017921, 
+      
+      "range": [0, null],
+      "format": "float"
+    }   
+  ],
+  "requiredinputs": [],
+  "output": [
+    {
+      "label": "Evolución del paciente al 3er día",
+      "type": "list"
+    }
+  ],
+  "info": [
+    {
+      "name": "Sensibility-Specificity-Curve",
+      "label": "Sensibility-Specificity Curve",
+      "type": "plot2D",
+      "curves": [
+        {
+          "label": "performance",
+          "x": [0, 0, 0, 0, 0],
+          "y": [0, 0, 0, 0, 0]
+        },
+        {
+          "label": "reference",
+          "x": [
+            0,
+            1
+          ],
+          "y": [
+            1,
+            0
+          ]
+        }
+      ],
+      "xlabel": "Specificity (TNR)",
+      "ylabel": "Sensitivity (TPR)",
+      "xrange": [
+        0,
+        1
+      ],
+      "yrange": [
+        0,
+        1.1
+      ]
+    },
+    {
+      "name": "confusion_matrix",
+      "label": "Matriz de confusion (para TPR=0.88, TNR=0.36)",
+      "type": "dataframe",
+      "columns": [
+        [
+          "Predicted",
+          "Positive"
+        ],
+        [
+          "Predicted",
+          "Negative"
+        ]
+      ],
+      "index": [
+        [
+          "Real",
+          "Positive"
+        ],
+        [
+          "Real",
+          "Negative"
+        ]
+      ],
+      "data": [
+        [
+          70,
+          23
+        ],
+        [
+          10,
+          13
+        ]
+      ]
+    },
+    {
+      "name": "description",
+      "label": "Descripción",
+      "type": "string",
+      "value": "El modelo estima la puntuación SOFA al tercer día luego del ingreso a UCI. El modelo es un Gradient Boosted Trees, en el que un conjunto de 100 árboles de decisión en serie se entrenó minimizando el error sobre la predicción caso/control"
+    }
+  ]
+}

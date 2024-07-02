@@ -1,0 +1,726 @@
+{
+  "idProject": "sepsis_diagnostico_a_ingreso",
+  "version": "0.4",
+  "releasedate": "2021-06-03",
+  "input": [
+    {
+      "name": "SEXO",
+      "label": "sepsis_diagnostico_a_ingreso.Genero",
+      "type": "ordinal",
+      "group": "Datos demográficos",
+      "map": [
+        {
+          "label": "Varón",
+          "value": "1"
+        },
+        {
+          "label": "Mujer",
+          "value": "2"
+        }
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "EDAD",
+      "label": "sepsis_diagnostico_a_ingreso.EDAD",
+      "type": "numerical",
+      "group": "Datos demográficos",
+      "unit": "años",
+      "format": "int",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "TALLA",
+      "label": "sepsis_diagnostico_a_ingreso.Altura",
+      "type": "numerical",
+      "group": "Datos demográficos",
+      "unit": "m",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "PESO",
+      "label": "sepsis_diagnostico_a_ingreso.peso",
+      "type": "numerical",
+      "group": "Datos demográficos",
+      "unit": "kg",
+      "format": "int",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "TAS",
+      "label": "sepsis_diagnostico_a_ingreso.Presión arterial sistólica",
+      "type": "numerical",
+      "group": "Constantes al ingreso",
+      "unit": "mmHg",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.764239
+    },
+    {
+      "name": "TAM",
+      "label": "sepsis_diagnostico_a_ingreso.Presión arterial media",
+      "type": "numerical",
+      "group": "Constantes al ingreso",
+      "unit": "mmHg",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.050315
+    },
+    {
+      "name": "FC",
+      "label": "sepsis_diagnostico_a_ingreso.Frecuencia cardíaca",
+      "type": "numerical",
+      "group": "Constantes al ingreso",
+      "unit": "pulsaciones por minuto",
+      "format": "int",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.000192
+    },
+    {
+      "name": "FR",
+      "label": "sepsis_diagnostico_a_ingreso.Frecuencia respiratoria",
+      "group": "Constantes al ingreso",
+      "type": "numerical",
+      "unit": "repiraciones por minuto",
+      "format": "int",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.00014
+    },
+    {
+      "name": "H2B",
+      "label": "sepsis_diagnostico_a_ingreso.Concentración de histona H2B",
+      "type": "numerical",
+      "group": "Analíticas KIT - histonas",
+      "unit": "ng/mL",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "PCA",
+      "label": "sepsis_diagnostico_a_ingreso.Concentración de proteína C activada",
+      "type": "numerical",
+      "group": "Analíticas KIT - histonas",
+      "unit": "ng/mL",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "H3",
+      "label": "sepsis_diagnostico_a_ingreso.Concentración de histona H3",
+      "type": "numerical",
+      "group": "Analíticas KIT - histonas",
+      "unit": "ng/mL",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "H4",
+      "label": "sepsis_diagnostico_a_ingreso.Concentración de histona H4",
+      "type": "numerical",
+      "group": "Analíticas KIT - histonas",
+      "unit": "ng/mL",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "BACTER",
+      "label": "sepsis_diagnostico_a_ingreso.Bacteriemia",
+      "type": "boolean",
+      "group": "Microbiología",
+      "model-importance": 0.0002
+    },
+    {
+      "name": "HTA",
+      "label": "sepsis_diagnostico_a_ingreso.Hipertensión arterial (antecedentes)",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "ARTPERIF",
+      "label": "sepsis_diagnostico_a_ingreso.Arteriopatia periférica",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "CHARLSON",
+      "label": "sepsis_diagnostico_a_ingreso.Índice de comorbilidad de Charlson",
+      "type": "numerical",
+      "group": "Comorbilidades y antecedentes",
+      "unit": "",
+      "format": "int",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "DL",
+      "label": "sepsis_diagnostico_a_ingreso.Dislipemia",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "EPOC",
+      "label": "sepsis_diagnostico_a_ingreso.Enfermedad pulmonar obstructiva crónica",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "HEPATOCRONIC",
+      "label": "sepsis_diagnostico_a_ingreso.Enfermedad hepatológica crónica",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "ATB.2SEM.PRE",
+      "label": "sepsis_diagnostico_a_ingreso.Uso de antibiótico en las 2 semanas anteriores al ingreso en UCI",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "DM",
+      "label": "sepsis_diagnostico_a_ingreso.Diabetes mellitus (antecedentes)",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "CIC",
+      "label": "sepsis_diagnostico_a_ingreso.Cardiopatía isquémica crónica",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "ENFCEREBRAL",
+      "label": "sepsis_diagnostico_a_ingreso.Enfermedad cerebral",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "TABACO",
+      "label": "sepsis_diagnostico_a_ingreso.Fumador",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "ALCOHOL",
+      "label": "sepsis_diagnostico_a_ingreso.Alcoholismo",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "INGRESP.3MES.PRE",
+      "label": "sepsis_diagnostico_a_ingreso.Ingreso hospitalario en los 3 meses previos",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "TUMORSOLIDO",
+      "label": "sepsis_diagnostico_a_ingreso.Diagnóstico de tumor sólido",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "CORTICOIDES",
+      "label": "sepsis_diagnostico_a_ingreso.Paciente con tratamiento con corticoides",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "INMUNOSUPRESORES",
+      "label": "sepsis_diagnostico_a_ingreso.Paciente con tratamiento con inmunosupresores",
+      "type": "boolean",
+      "group": "Comorbilidades y antecedentes",
+      "model-importance": 0
+    },
+    {
+      "name": "pO2FiO2",
+      "label": "sepsis_diagnostico_a_ingreso.Presión parcial del oxígeno / Fracción de oxígeno inspirado",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.167452
+    },
+    {
+      "name": "PCR1",
+      "label": "sepsis_diagnostico_a_ingreso.PCR (Proteína C reactiva) día 1",
+      "type": "numerical",
+      "unit": "",
+      "format": "float",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.015952
+    },
+    {
+      "name": "GLUC1",
+      "label": "sepsis_diagnostico_a_ingreso.Glucosa día 1",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "type": "numerical",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.0006
+    },
+    {
+      "name": "PMN1",
+      "label": "sepsis_diagnostico_a_ingreso.Lecucoritos polimorfonucleares día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.000447
+    },
+    {
+      "name": "FERRITINA",
+      "label": "sepsis_diagnostico_a_ingreso.Ferritina al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.000353
+    },
+    {
+      "name": "CL1",
+      "label": "sepsis_diagnostico_a_ingreso.Cloro día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.000078
+    },
+    {
+      "name": "ALBUMINA",
+      "label": "sepsis_diagnostico_a_ingreso.Albumina al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0.000034
+    },
+    {
+      "name": "Hg1",
+      "label": "sepsis_diagnostico_a_ingreso.Hemoglobina día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "TTPA1",
+      "label": "sepsis_diagnostico_a_ingreso.Tiempo de tromboplastina parcial activado día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "NA1",
+      "label": "sepsis_diagnostico_a_ingreso.Sodio día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "pCO2",
+      "label": "sepsis_diagnostico_a_ingreso.presión parcial de dióxido de carbono",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "FOSFORO",
+      "label": "sepsis_diagnostico_a_ingreso.Fósforo al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "LACTATO1",
+      "label": "sepsis_diagnostico_a_ingreso.Lactacto al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "mmol/L",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "K1",
+      "label": "sepsis_diagnostico_a_ingreso.Potasio día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "ZINC",
+      "label": "sepsis_diagnostico_a_ingreso.Zinc al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "BILTOTAL",
+      "label": "sepsis_diagnostico_a_ingreso.Bilirrubina total al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "CR1",
+      "label": "sepsis_diagnostico_a_ingreso.Creatinina día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "pH1",
+      "label": "sepsis_diagnostico_a_ingreso.pH1",
+      "type": "numerical",
+      "unit": "",
+      "format": "float",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "PCT1",
+      "label": "sepsis_diagnostico_a_ingreso.Procalcitonina día 1",
+      "type": "numerical",
+      "unit": "",
+      "format": "float",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "CALCIO",
+      "label": "sepsis_diagnostico_a_ingreso.Calcio al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "COLESTEROL",
+      "label": "sepsis_diagnostico_a_ingreso.Colesterol total al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "UREA1",
+      "label": "sepsis_diagnostico_a_ingreso.Urea día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "MAGNESIO",
+      "label": "sepsis_diagnostico_a_ingreso.Magnesio al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "LEUCO1",
+      "label": "sepsis_diagnostico_a_ingreso.Leucocitos día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "TRIGLICER",
+      "label": "sepsis_diagnostico_a_ingreso.Trigliceridos al ingreso",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "Plaq1",
+      "label": "sepsis_diagnostico_a_ingreso.Plaquetas día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    },
+    {
+      "name": "BIL1",
+      "label": "sepsis_diagnostico_a_ingreso.Bilirrubina día 1",
+      "type": "numerical",
+      "group": "Analíticas ingreso - niveles plasmáticos",
+      "unit": "",
+      "format": "float",
+      "range": [
+        0,
+        null
+      ],
+      "model-importance": 0
+    }
+  ],
+  "requiredinputs": [],
+  "output": [
+    {
+      "label": "Probabilidad de sepsis",
+      "type": "list"
+    }
+  ],
+  "info": [
+    {
+      "name": "Sensibility-Specificity-Curve",
+      "label": "Sensibility-Specificity Curve",
+      "type": "plot2D",
+      "curves": [
+        {
+          "label": "performance",
+          "x": [1.0, 0.8823529411764706, 0.8823529411764706, 0.8823529411764706, 0.0],
+          "y": [0.0, 0.0, 0.9672131147540983, 1.0, 1.0]
+        },
+        {
+          "label": "reference",
+          "x": [
+            0,
+            1
+          ],
+          "y": [
+            1,
+            0
+          ]
+        }
+      ],
+      "xlabel": "Specificity (TNR)",
+      "ylabel": "Sensitivity (TPR)",
+      "xrange": [
+        0,
+        1
+      ],
+      "yrange": [
+        0,
+        1.1
+      ]
+    },
+    {
+      "name": "confusion_matrix",
+      "label": "Matriz de confusion (para TPR=0.975, TNR=0.882)",
+      "type": "dataframe",
+      "columns": [
+        [
+          "Predicted",
+          "Positive"
+        ],
+        [
+          "Predicted",
+          "Negative"
+        ]
+      ],
+      "index": [
+        [
+          "Real",
+          "Positive"
+        ],
+        [
+          "Real",
+          "Negative"
+        ]
+      ],
+      "data": [
+        [
+          119,
+          3
+        ],
+        [
+          2,
+          115
+        ]
+      ]
+    },
+    {
+      "name": "description",
+      "label": "Descripción",
+      "type": "string",
+      "value": "El modelo estima la probabilidad de que un paciente tenga sepsis. El modelo es un Gradient Boosted Trees, en el que un conjunto de 100 árboles de decisión en serie se entrenó minimizando el error sobre la predicción caso/control"
+    }
+  ]
+}
